@@ -19,9 +19,6 @@ public class UcSayiSırala {
             case 7:
                 System.out.print("a<b<c");
                 break;
-            case 6:
-                System.out.print("imkansız");
-                break;
             case 5:
                 System.out.print("a<c<b");
                 break;
@@ -34,13 +31,10 @@ public class UcSayiSırala {
             case 2:
                 System.out.print("b<c<a");
                 break;
-            case 1:
-                System.out.print("imkansız");
-                break;
             case 0:
                 System.out.print("c<b<a");
                 break;
-            default:
+            default: // 6 ve 1 mümkün olmamalı
                 System.out.print("Bir hatayla karşılaşıldı");
                 break;
         }
