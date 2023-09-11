@@ -18,7 +18,7 @@ public class UcleDortdeBolunen {
         }
         // Sonuç Hesaplamaları
         double sonuc = toplam / sayac;
-        System.out.print(sayac +"adet sayı bulunmuştur ve bunları toplamı" + toplam + "ortalama ise:" + sonuc);
+        System.out.print(sayac +" adet sayı bulunmuştur ve bunları toplamı " + toplam + " ortalaması ise " + sonuc);
         input.close();
     } 
 }
