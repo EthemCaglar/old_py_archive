@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class UsluSayı {
+public class UsluSayi {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // verilerin toplanması
         System.out.print("Verdiğiniz Sayının Verdiğiniz Değerdeki Üssü\n");
