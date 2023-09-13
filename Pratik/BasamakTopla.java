@@ -9,11 +9,11 @@ public class BasamakTopla {
         int sayiYedek = sayi;
         int ekleme = 0;
         
-        while (sayi !=0){
-            ekleme = sayi % 10;
-            sonuc += ekleme;
-            sayi /= 10;
+        while (sayi !=0){ // int olduğu için sayı bölüne bölüne 0'a eşit olacak bu olana kadar dönecek
+            ekleme = sayi % 10; // bu bize en son basamağı verir
+            sonuc += ekleme; // son basamakları ekleyerek sonuca gidiliyor
+            sayi /= 10; // 10a bölerek birler basamağını eliyor, böylece birer hane azalıyor
         }
-        System.out.print(sonuc);
+        System.out.print("Basamaklar Toplamı: " + sonuc); // sonuc
     }
 }
