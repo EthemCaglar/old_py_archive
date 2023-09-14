@@ -8,7 +8,7 @@ public class Fibonacci {
         int ikinci = 1;
 
         System.out.print(ilk + " " + ikinci + " ");
-        for(int i=1 ; i <= eleman-2 ; i++){
+        for(int i=1 ; i <= eleman-1 ; i++){
             ikinci = ilk + ikinci; // standart fibonacci islemi
             ilk = ikinci - ilk;; // eski ikinci değerini ilk değere atamak için
             System.out.print(ikinci + " ");
