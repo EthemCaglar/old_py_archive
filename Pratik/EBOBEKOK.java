@@ -7,8 +7,6 @@ public class EBOBEKOK {
         int sayi1 = input.nextInt();
         System.out.print("İkinci Sayınızı Giriniz: ");
         int sayi2 = input.nextInt();
-        System.out.print("EBOB ise 1 EKOK ise 2: ");
-        int secim = input.nextInt();
         int ebob = 0;
         int ekok = 0;
         int i = sayi1;
@@ -22,17 +20,10 @@ public class EBOBEKOK {
             }
             i--;
         }
+        System.out.print("EBOB : " + ebob);
+        ekok = (sayi1 * sayi2) / ebob;
+        System.out.print("EKOK : " + ekok);
 
-        if(secim == 1){
-            System.out.print("EBOB : " + ebob);
-        }else if(secim == 2){
-            ekok = (sayi1 * sayi2) / ebob;
-            System.out.print("EKOK : " + ekok);
-        }
-
-
-        
         input.close();
         }
 }
-
