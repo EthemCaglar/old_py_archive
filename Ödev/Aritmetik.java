@@ -10,7 +10,7 @@ public class Aritmetik {
         System.out.print("Üçüncü Sayınızı Giriniz: ");
         int c = input.nextInt();
 
-        int sonuc = a + (b*c) - b;
+        int sonuc = a + b * c - b;
 
         System.out.print("Sonucunuz: " + sonuc);
         input.close();
