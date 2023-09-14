@@ -7,11 +7,11 @@ public class TersUcgen {
 
         int yıldız= basamak*2-1;
 
-        for(int tur = 0 ; tur != basamak ; tur++){ // merkezi de dahil etmek için 1 ekliyoruz
-            for (int i = tur ; 1 <= i ; i--) {
+        for(int tur = 0 ; tur != basamak ; tur++){ // ana tur sayan döngü
+            for (int i = tur ; 1 <= i ; i--) {  // bosluk döngüsü
                 System.out.print(" ");
             }
-            for (int i= yıldız-tur*2 ; 1 <= i ; i--) {
+            for (int i= yıldız-tur*2 ; 1 <= i ; i--) { // yıldız döngüsü
                 System.out.print("*");
             }
             System.out.print("\n");
