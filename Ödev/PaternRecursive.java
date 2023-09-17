@@ -7,27 +7,27 @@ public class PaternRecursive {
         int girdi = input.nextInt();
         int girdiKoru = girdi;
         System.out.print("Çıktısı: " + girdi);
-        paternUp(girdi, girdiKoru);
+        paternDown(girdi, girdiKoru); // Azaltmak üzere paterne girer
         input.close();
     }
 
-    static void paternUp(int g, int gk){
-        if (g > 0){
+    static void paternDown(int g, int gk){
+        if (g > 0){ // girdi 0ın üstünde olduğu sürece tekrar azalmış haliyle tekrar girer
             g -= 5;
             System.out.print(" " + g);
-            paternUp(g,gk);
-        }else{
             paternDown(g,gk);
+        }else{
+            paternUp(g,gk); // girdi 0 veya altına indiği an yükselme methoduna geçer
         }
     }
 
-    static void paternDown(int g, int gk){
+    static void paternUp(int g, int gk){
             g += 5;
             System.out.print(" " + g);
             if(g == gk){
-                System.out.print("\n...");
+                System.out.print("\n..."); // g değeri ilk girdiye eşit olduğunda çıkış
             }else{
-                paternDown(g, gk);
+                paternUp(g, gk); // g değeri ilk girdiye eşit olana kadar methoda döner
             }
     }
 }
