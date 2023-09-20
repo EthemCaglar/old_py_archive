@@ -1,31 +1,32 @@
 package Fabrika;
 
-public class Employee {
+public class Employee { 
     String name;
     double salary;
     int workHours;
     int hireYear;
 
     public Employee(String name, int salary, int workHours,int hireYear){
+        // constructor method
         this.name = name;
         this.salary = salary;
         this.workHours = workHours;
         this.hireYear = hireYear;
     }
 
-    public void tax(){
+    public void tax(){ // vergi uygulama
         if(this.salary >= 1000){
             this.salary = this.salary * 0.97;
         }
     }
 
-    public void bonus(){
+    public void bonus(){ // bonus uygulama
         if(this.workHours >= 40){
             this.salary = this.salary + (this.workHours-40)*30;
         }
     }
 
-    public void raiseSalary(){ // şuanki yıl 2021
+    public void raiseSalary(){ // şuanki yıl 2021 yıla göre maaş değişimi
         if(2021 - this.hireYear > 10){
             this.salary = this.salary*1.1;
         }else if(2021 - this.hireYear > 20){
@@ -35,7 +36,7 @@ public class Employee {
         }
     }
 
-    public void print(){
+    public void print(){ // yazdırma
         System.out.println("-------Employee Profile-------");
         System.out.println("Name: " + this.name);
         System.out.println("Salary: " + this.salary);
