@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class MayinTarlasinda {
     public static void main(String[] args) {
-        oynat();//bomba ve sayıları yazıp oynat methodunu çağırır
+        minesweeper();//bomba ve sayıları yazıp oynat methodunu çağırır
     }
     // Satır sutun ve mayın sayısını alır ---------------------------------------------------------------
     public static int[] secim(){
@@ -164,9 +164,13 @@ public class MayinTarlasinda {
             System.out.print("Seçtiğiniz sutun: ");
             sutunGiris = input.nextInt();
             if(0 <= sutunGiris && sutunGiris < display[0].length ){
-                break;
+                if(display[satirGiris][sutunGiris] != "-"){
+                    System.out.print("Zaten Açtınız !!!\n");
+                }else{
+                    break;
+                }
             }else{
-                System.out.print("Hatalı Giriş!!!\n");
+                System.out.print("Hatalı Giriş !!!\n");
             }
         }
         int[] giris = {satirGiris,sutunGiris};
@@ -174,7 +178,7 @@ public class MayinTarlasinda {
         return giris;
     }
     // oyun burada çalışacak----------------------------------------------------------------------------------------
-    public static void oynat(){
+    public static void minesweeper(){
         int[] secimler = secim(); // kullanıcıya seçim yaptırıp
         int mayin = secimler[2];
         String[][] icHazir = oyunYapisi(secimler[0],secimler[1],secimler[2]);
