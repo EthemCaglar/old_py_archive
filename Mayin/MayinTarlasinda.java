@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class MayınTarlasinda {
+public class MayinTarlasinda {
     public static void main(String[] args) {
         int[] secimler = secim(); // kullanıcıya seçim yaptırıp 
         oynat(oyunYapisi(secimler[0],secimler[1], secimler[2]), secimler[2]);
