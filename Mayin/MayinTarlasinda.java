@@ -2,8 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class MayinTarlasinda {
     public static void main(String[] args) {
-        int[] secimler = secim(); // kullanıcıya seçim yaptırıp 
-        oynat(oyunYapisi(secimler[0],secimler[1], secimler[2]), secimler[2]);
+        oynat();//bomba ve sayıları yazıp oynat methodunu çağırır
     }
     // Satır sutun ve mayın sayısını alır ---------------------------------------------------------------
     public static int[] secim(){
@@ -136,7 +135,7 @@ public class MayinTarlasinda {
         String[][] mayinHazir = oyunMatrisi(inside, mayinDizimi);
         return mayinHazir;
     }
-    // çift eskenli matris yazdırmak için
+    // çift eskenli matris yazdırmak için -------------------------------------------------------------------------
     public static void yazdir(String[][] yazdir){
         for(int i=0 ; i < yazdir.length ; i++){
             for(int j=0 ; j < yazdir[0].length ; j++){
@@ -145,13 +144,13 @@ public class MayinTarlasinda {
             System.out.print("\n");
         }
     }
-    // oyunu oynamak için açılacak satır ve sutunu istemek için------------------------------------------------------
+    // oyunu oynamak için açılacak satır ve sutunu istemek için ------------------------------------------------------
     public static int[] giris(String[][] display){
         Scanner input = new Scanner(System.in);
         int satirGiris;
         int sutunGiris;
 
-        while(true){
+        while(true){ // satır sayısı sınırın dışında olursa tekrar alıyor
             System.out.print("Seçtiğiniz satır: ");
             satirGiris = input.nextInt();
             if(0 <= satirGiris && satirGiris < display.length ){
@@ -161,7 +160,7 @@ public class MayinTarlasinda {
             }
         }
 
-        while(true){
+        while(true){ // sutun sayısı sınırın dışında olursa tekrar alıyor
             System.out.print("Seçtiğiniz sutun: ");
             sutunGiris = input.nextInt();
             if(0 <= sutunGiris && sutunGiris < display[0].length ){
@@ -175,10 +174,13 @@ public class MayinTarlasinda {
         return giris;
     }
     // oyun burada çalışacak----------------------------------------------------------------------------------------
-    public static void oynat(String[][] icHazir, int mayin){
+    public static void oynat(){
+        int[] secimler = secim(); // kullanıcıya seçim yaptırıp
+        int mayin = secimler[2];
+        String[][] icHazir = oyunYapisi(secimler[0],secimler[1],secimler[2]);
         String[][] display = new String [icHazir.length][icHazir[0].length];
 
-        for(int i=0 ; i < display.length ; i++){ // tüm insideın içini 0
+        for(int i=0 ; i < display.length ; i++){ // açılan display değişkeninin tüm segmentlerine - kondu
             for(int j=0 ; j < display[0].length ; j++){
                 display[i][j] = "-";
             }
@@ -186,7 +188,7 @@ public class MayinTarlasinda {
 
         int galibiyetKontrol = 0;
         
-        while(true){
+        while(true){ // oyunun merkezi - giris alır displayi değiştirir - kazandı kaybetti kontrolü yapar.
             yazdir(icHazir);
             System.out.println("------------------------------------------------------------");
             yazdir(display);
