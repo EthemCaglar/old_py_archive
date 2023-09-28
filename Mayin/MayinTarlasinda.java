@@ -149,32 +149,33 @@ public class MayinTarlasinda {
         Scanner input = new Scanner(System.in);
         int satirGiris;
         int sutunGiris;
+        while(true){
+            while(true){ // satır sayısı sınırın dışında olursa tekrar alıyor
+                System.out.print("Seçtiğiniz satır: ");
+                satirGiris = input.nextInt();
+                if(0 <= satirGiris && satirGiris < display.length ){
+                    break;
+                }else{
+                    System.out.print("Hatalı Giriş!!!\n");
+                }
+            }
 
-        while(true){ // satır sayısı sınırın dışında olursa tekrar alıyor
-            System.out.print("Seçtiğiniz satır: ");
-            satirGiris = input.nextInt();
-            if(0 <= satirGiris && satirGiris < display.length ){
+            while(true){ // sutun sayısı sınırın dışında olursa tekrar alıyor
+                System.out.print("Seçtiğiniz sutun: ");
+                sutunGiris = input.nextInt();
+                if(0 <= sutunGiris && sutunGiris < display[0].length ){
+                    break;
+                }else{
+                    System.out.print("Hatalı Giriş !!!\n");
+                }
+            }
+            if(display[satirGiris][sutunGiris] == "-"){
                 break;
             }else{
-                System.out.print("Hatalı Giriş!!!\n");
-            }
-        }
-
-        while(true){ // sutun sayısı sınırın dışında olursa tekrar alıyor
-            System.out.print("Seçtiğiniz sutun: ");
-            sutunGiris = input.nextInt();
-            if(0 <= sutunGiris && sutunGiris < display[0].length ){
-                if(display[satirGiris][sutunGiris] != "-"){
-                    System.out.print("Zaten Açtınız !!!\n");
-                }else{
-                    break;
-                }
-            }else{
-                System.out.print("Hatalı Giriş !!!\n");
+                System.out.print("Zaten Açtınız !!!\n");
             }
         }
         int[] giris = {satirGiris,sutunGiris};
-        
         return giris;
     }
     // oyun burada çalışacak----------------------------------------------------------------------------------------
