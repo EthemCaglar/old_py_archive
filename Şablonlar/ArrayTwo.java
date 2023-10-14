@@ -51,3 +51,19 @@ public class ArrayTwo {
         input.close();
     }
 }
+
+/*
+ class Printer{
+    public <T> void printArray(T[] array){
+        for(T item : array){
+            System.out.println(item);
+        }
+    }
+}
+public static void main( String args[] ) {
+        Printer myPrinter = new Printer();
+        Integer[] intArray = { 1, 2, 3 };
+        String[] stringArray = {"Hello", "World"};
+        myPrinter.printArray(intArray);
+        myPrinter.printArray(stringArray);
+ */
