@@ -24,6 +24,14 @@ public class DatabaseWork {
             st.executeUpdate(updateQuery4);
             st.executeUpdate(updateQuery5);
 
+            ResultSet resultSet = st.executeQuery("SELECT * FROM employees");
+            while (resultSet.next()) {
+                System.out.println("ID : " + resultSet.getInt(1));
+                System.out.println("Name : " + resultSet.getString(2));
+                System.out.println("Position : " + resultSet.getString(3));
+                System.out.println("Salary : " + resultSet.getInt(4));
+                System.out.println("#################");
+            }
 
             st.close();
         } catch (SQLException ex) {
